@@ -4,22 +4,57 @@
   "info": {
     "singularName": "blog",
     "pluralName": "blogs",
-    "displayName": "blog"
+    "displayName": "Blog",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
+    "Title": {
       "type": "string"
     },
+    "Description": {
+      "type": "blocks",
+      "required": true
+    },
     "image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
-      "multiple": false
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Title"
+    },
+    "Category": {
+      "type": "enumeration",
+      "enum": [
+        "Post",
+        "Article",
+        "Story",
+        "Journal",
+        "Piece",
+        "Entry"
+      ]
+    },
+    "Excerpt": {
+      "type": "text"
+    },
+    "blog": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::blog.blog"
+    },
+    "Tag": {
+      "type": "uid"
     }
   }
 }

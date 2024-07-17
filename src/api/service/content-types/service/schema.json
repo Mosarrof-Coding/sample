@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services",
+  "info": {
+    "singularName": "service",
+    "pluralName": "services",
+    "displayName": "Service",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Service_name": {
+      "type": "string"
+    },
+    "Package_type": {
+      "type": "enumeration",
+      "enum": [
+        "Basic",
+        "Premium",
+        "Golf Luxury"
+      ]
+    },
+    "Price": {
+      "type": "decimal"
+    },
+    "Features": {
+      "type": "text"
+    }
+  }
+}
